@@ -22,24 +22,31 @@ const LandingPage = () => {
 
     return (
         <div style={{ marginTop: "40px" }}>
+            <div style={{display:"flex" , justifyContent:"space-between"}}>
             <div style={{ display: "flex", alignItems: "center" }}>
                 <h3 style={{ fontSize: "16px", color: "#E5DFD9" }}>Bags</h3>
                 <div style={{ backgroundColor: "#E5DFD9", height: "5px", width: "5px", borderRadius: "50%", marginLeft: "10px" }}></div>
-                <h3 style={{ fontSize: "16px", color: "#E5DFD9", marginLeft: "10px" }}>Backpacks</h3>
+                <h3 style={{ fontSize: "16px", fontWeight:"bold", color: "#E5DFD9", marginLeft: "10px" }}>Backpacks</h3>
+            </div>
+            <div style={{display:"flex", gap:"6px"}}>
+                <h3 style={{color: "#E5DFD9",fontSize:"16px"}}>13 Products</h3> 
+                <Image  style={{color: "#E5DFD9"}} src={require("../assets/Vector 4.png")} alt="down" height={18} />
+            </div>
             </div>
             <div style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr)",
-                gap: "20px",
-                marginTop: "20px"
+                gap: "40px",
+                marginTop: "40px",
             }}>
                 {
                     data && data.map((ele) => {
                         let { id, title, price, image } = ele;
                         return (
-                            <div key={id} >
-                                <img style={{ borderRadius: "8px", width:'100%' }} src={image} alt={title}  height={400} />
-                                <h2 style={{ color: "#E5DFD9", fontSize: "20.5px", marginTop: "12px", padding: "10px" }} >{title}</h2>
+                            <div key={id} style={{ position: 'relative' }} >
+                                <Image style={{ borderRadius: "8px", width:'100%' }} src={image} width={100} alt={title}  height={400} />
+
+                                <h2 style={{ color: "#E5DFD9", fontSize: "20.5px", marginTop: "12px", padding: "10px",height:"145px" }} >{title}</h2>
                                 <div style={{display:"flex", justifyContent:"space-between"}}> 
                                 <div style={{ width: "70%", padding: "8px" }}>
                                     <Image src={require("../assets/rupee-sign.png")} alt="rupee" height={16} />
@@ -48,10 +55,19 @@ const LandingPage = () => {
                                 </div>
                                         <Image style={{color:"#E5DFD9"}} src={require("../assets/Group 450.png")} alt="bag"/>
                                 </div>
+                                <Image  style={{
+                                        position: 'absolute',
+                                        top: '10px',
+                                        right: '10px',
+                                        color: '#0C0C0C',
+                                        fontSize: '18px'
+                                    }} src={require("../assets/Frame 53.png")} alt="notification"/>
+
                             </div>
                         )
                     })
                 }
+                
             </div>
         </div>
     )
