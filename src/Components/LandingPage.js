@@ -27,18 +27,26 @@ const LandingPage = () => {
                 <div style={{ backgroundColor: "#E5DFD9", height: "5px", width: "5px", borderRadius: "50%", marginLeft: "10px" }}></div>
                 <h3 style={{ fontSize: "16px", color: "#E5DFD9", marginLeft: "10px" }}>Backpacks</h3>
             </div>
-            <div>
+            <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)",
+                gap: "20px",
+                marginTop: "20px"
+            }}>
                 {
                     data && data.map((ele) => {
                         let { id, title, price, image } = ele;
                         return (
-                            <div key={id} className="product">
-                                <img style={{ borderRadius: "8px" }} src={image} alt={title} width={400} height={500} />
-                                <h2 style={{ color: "#E5DFD9", fontSize: "20.5px", marginTop: "12px", width: "30%", padding: "10px" }} >{title}</h2>
-                                <div style={{ width: "30%", padding: "8px" }}>
+                            <div key={id} >
+                                <img style={{ borderRadius: "8px", width:'100%' }} src={image} alt={title}  height={400} />
+                                <h2 style={{ color: "#E5DFD9", fontSize: "20.5px", marginTop: "12px", padding: "10px" }} >{title}</h2>
+                                <div style={{display:"flex", justifyContent:"space-between"}}> 
+                                <div style={{ width: "70%", padding: "8px" }}>
                                     <Image src={require("../assets/rupee-sign.png")} alt="rupee" height={16} />
                                     <span style={{ color: "#E5DFD9", fontSize: "20px", marginLeft: "5px", fontWeight: 700 }}>{price}</span>
-                                    <span style={{ color: "#E5DFD9", fontSize: "20px", marginLeft: "10px", fontWeight: 700 }}>Double: {doublePrice(price)}</span>
+                                    <span style={{ color: "#E5DFD9",fontSize:"12px",marginLeft:"5px" }}> {doublePrice(price)}<span style={{color:"#2FC14F"}} >(50% Off)</span></span>
+                                </div>
+                                        <Image style={{color:"#E5DFD9"}} src={require("../assets/Group 450.png")} alt="bag"/>
                                 </div>
                             </div>
                         )
