@@ -1,0 +1,36 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    color: #E5DFD9;
+    font-size: 20px;
+    letter-spacing: 6px;
+    margin-left: 32px;
+}
+
+.iconContainer {
+    display: flex;
+    width: 14%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icon {
+    color: #E5DFD9;
+    font-size: 18px;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.navLink {
+    font-size: 14px;
+    color: #E5DFD9;
+    text-decoration: none;
+}

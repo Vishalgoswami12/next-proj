@@ -10,13 +10,12 @@ export default function Home() {
         <title>
           Next Assignment
         </title>
-      
       </Head>
       <main>
         <Header/>
         <AllItem/>
         <LandingPage/>
-          </main>
+      </main>
     </div>
   );
 }

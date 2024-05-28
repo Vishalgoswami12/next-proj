@@ -1,0 +1,21 @@
+.container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    text-align: center;
+}
+
+.image {
+    color: #FFFFFF;
+}
+
+.title {
+    color: #E5DFD9;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
