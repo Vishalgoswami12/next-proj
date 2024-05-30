@@ -3,10 +3,16 @@ import React,{useState} from "react";
 import Image from "next/image";
 import styles from './Header.module.css'; 
 
-const Header = () => {
+const Header = ({onSearch}) => {
     const [showSearch,setShowSearch] = useState(false)
+    const[input,setInput] = useState("")
+
     const handleSearchClick = () => {
         setShowSearch(!showSearch);
+    }
+    const handleSearch = (e) => {
+        setInput(e.target.value)
+        onSearch(e.target.value)
     }
     return (
         <div>
@@ -19,6 +25,8 @@ const Header = () => {
                             className={styles.searchInput}
                             onBlur={() => setShowSearch(false)}
                             placeholder="Search..."
+                            value={input}
+                            onChange={handleSearch}
                         />
                     ) : (
                         <Image
@@ -41,6 +49,7 @@ const Header = () => {
                 <a className={styles.navLink} href="#">Jewelery</a>
             </div>
         </div>
+                    
     );
 }
 

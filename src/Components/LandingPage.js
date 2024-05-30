@@ -1,22 +1,9 @@
 'use client'
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import React from "react";
 import Image from "next/image";
 import styles from '../Components/LandingPage.module.css'; 
 
-const LandingPage = () => {
-    const [data, setData] = useState([]);
-
-    const fetchData = () => {
-        return axios.get("https://fakestoreapi.com/products")
-            .then((res) => setData(res.data))
-            .catch((error) => console.error("Error fetching data: ", error));
-    };
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
+const LandingPage = ({data}) => {
     const doublePrice = (price) => {
         return (price * 2).toFixed(2);
     };
@@ -35,8 +22,8 @@ const LandingPage = () => {
                 </div>
             </div>
             <div className={styles.grid}>
-                {
-                    data && data.map((ele) => {
+                {data.length > 0 ? (
+                    data.map((ele) => {
                         let { id, title, price, image } = ele;
                         return (
                             <div key={id} className={styles.card}>
@@ -54,9 +41,11 @@ const LandingPage = () => {
                                 </div>
                                 <Image className={styles.notificationIcon} src={require("../assets/Frame 53.png")} alt="notification"/>
                             </div>
-                        )
+                        );
                     })
-                }
+                ) : (
+                    <p className={styles.noItemsMessage}>Item is not in the list</p>
+                )}
             </div>
         </div>
     );
