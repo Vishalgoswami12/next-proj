@@ -9,6 +9,14 @@
     letter-spacing: 6px;
     margin-left: 32px;
 }
+.searchInput {
+    width: 200px;
+    padding: 5px 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    transition: width 0.3s ease;
+}
 
 .iconContainer {
     display: flex;
