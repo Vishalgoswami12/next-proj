@@ -28,7 +28,6 @@ const Header = () => {
                             onClick={handleSearchClick}
                         />
                     )}
-                    {/* <Image className={styles.icon} src={require("../assets/search.png")} alt="Search" /> */}
                     <Image className={styles.icon} src={require("../assets/user-alt.png")} alt="user" />
                     <Image className={styles.icon} src={require("../assets/Frame 54.png")} alt="bag" />
                     <Image className={styles.icon} src={require("../assets/Frame 53.png")} alt="notification" />
