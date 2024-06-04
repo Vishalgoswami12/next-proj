@@ -24,7 +24,7 @@ const LandingPage = ({data}) => {
             <div className={styles.grid}>
                 {data.length > 0 ? (
                     data.map((ele) => {
-                        let { id, title, price, image } = ele;
+                        let { id, title, price, image } = ele;			
                         return (
                             <div key={id} className={styles.card}>
                                 <Image className={styles.productImage} src={image} width={100} alt={title} height={400} />
@@ -40,6 +40,7 @@ const LandingPage = ({data}) => {
                                     <Image className={styles.bagIcon} src={require("../assets/Group 450.png")} alt="bag"/>
                                 </div>
                                 <Image className={styles.notificationIcon} src={require("../assets/Frame 53.png")} alt="notification"/>
+																	
                             </div>
                         );
                     })
