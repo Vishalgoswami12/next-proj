@@ -21,6 +21,7 @@ const AllItem = () => {
                 <Image className={styles.image} src={require("../assets/Frame 13.png")} alt="item 4" />
                 <h3 className={styles.title}>Duffle Bag</h3>
             </div>
+            
             <div className={styles.item}>
                 <Image className={styles.image} src={require("../assets/Frame 49.png")} alt="item 5" />
                 <h3 className={styles.title}>Laptop Sleeve</h3>
